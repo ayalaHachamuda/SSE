@@ -1,0 +1,39 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSE The Time Now</title>
+</head>
+<body>
+    <h1>Server-Sent Events</h1>
+    <div id="time"></div>
+
+    <script>
+        const eventSource = new EventSource('/time');
+        eventSource.onmessage = function(event) {
+            document.getElementById('time').textContent = 'Current Time: ' + event.data;
+        };
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSE The Time Now</title>
+</head>
+<body>
+    <h1>Server-Sent Events</h1>
+    <div id="time">Current Time: Loading...</div>
+
+    <script>
+        const eventSource = new EventSource('/time');
+        eventSource.onmessage = function(event) {
+            document.getElementById('time').textContent = 'Current Time: ' + event.data; // עדכון התוכן
+        };
+    </script>
+</body>
+</html>
